@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative "lib/simple_analytics_rails/version"
 
 Gem::Specification.new do |spec|
