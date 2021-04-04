@@ -1,0 +1,19 @@
+name: Standard
+
+on:
+  push:
+    branches-ignore:
+      - master
+jobs:
+  standard:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 3.0
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
+        bundler-cache: true
+    - name: Run Standard
+      run: bundle exec standardrb
