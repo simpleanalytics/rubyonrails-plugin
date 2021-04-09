@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = spec.summary
   spec.homepage = "https://simpleanalytics.com/"
   spec.license = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/simpleanalytics/rubyonrails-plugin"
@@ -30,5 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "standardrb", "~> 1.0"
   spec.add_development_dependency "rspec-rails", "~> 4.0"
-  spec.add_development_dependency "yard", "~> 0.9.26"
+  spec.add_development_dependency "yard", "~> 0.9"
+  spec.add_development_dependency "appraisal", "~> 2.4"
 end

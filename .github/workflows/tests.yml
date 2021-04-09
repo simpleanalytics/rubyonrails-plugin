@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
+        rails:
+          - 'rails52'
+          - 'rails6'
+          - 'rails61'
         ruby:
           - '2.5'
           - '2.6'
@@ -25,6 +29,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run the test
+      - name: Setup Appraisal
         run: |
-          bundle exec rake spec
+          bundle exec appraisal ${{ matrix.rails }} install
+      - name: Run the tests
+        run: |
+          bundle exec appraisal ${{ matrix.rails }} rake spec
