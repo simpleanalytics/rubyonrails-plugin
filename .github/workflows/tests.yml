@@ -1,16 +1,28 @@
 name: Tests
 
-on: [push,pull_request]
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        ruby:
+          - '2.5'
+          - '2.6'
+          - '2.7'
+          - '3.0'
+          - 'ruby-head'
+          - 'jruby-head'
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.0
+        ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - name: Run the test
       run: |
