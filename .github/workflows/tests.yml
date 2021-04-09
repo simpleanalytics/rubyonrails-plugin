@@ -12,6 +12,6 @@ jobs:
       with:
         ruby-version: 3.0.0
         bundler-cache: true
-    - name: Run the default task
+    - name: Run the test
       run: |
-        bundle exec rake
+        bundle exec rake spec

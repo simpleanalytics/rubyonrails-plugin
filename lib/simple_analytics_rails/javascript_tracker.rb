@@ -21,7 +21,7 @@ module SimpleAnalyticsRails
 
     def configuration_to_html_attributes
       SimpleAnalyticsRails.configuration.to_h.collect do |key, value|
-        "data-#{key.to_s.gsub("_", "-")}=\"#{CGI.escapeHTML(value)}\""
+        "data-#{key.to_s.tr("_", "-")}=\"#{CGI.escapeHTML(value)}\""
       end.join(" ")
     end
   end

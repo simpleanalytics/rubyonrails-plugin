@@ -1,7 +1,7 @@
 RSpec.describe SimpleAnalyticsRails::Middleware::JavascriptInjection do
   let(:env) { :env }
   let(:status) { 200 }
-  let(:headers) { { "Content-Type" => "text/html" } }
+  let(:headers) { {"Content-Type" => "text/html"} }
   let(:response) { ["<html><head><title>Sample App</title></head><body></body></html>"] }
   let(:app) { double(:app, call: [status, headers, response]) }
   let(:javascript_injection) { described_class.new(app) }
@@ -16,31 +16,31 @@ RSpec.describe SimpleAnalyticsRails::Middleware::JavascriptInjection do
     end
 
     context "when content-type is text/json" do
-      let(:headers) { { "Content-Type" => "text/json" } }
+      let(:headers) { {"Content-Type" => "text/json"} }
 
       it do
-        new_status, new_headers, new_response = javascript_injection.call(env)
+        _new_status, _new_headers, new_response = javascript_injection.call(env)
         expect(new_response).to eq(response)
       end
     end
 
     context "when content-type is text/html" do
-      let(:headers) { { "Content-Type" => "text/html" } }
+      let(:headers) { {"Content-Type" => "text/html"} }
 
       it do
-        new_status, new_headers, new_response = javascript_injection.call(env)
+        _new_status, _new_headers, new_response = javascript_injection.call(env)
         expect(new_response[0]).to include("https://scripts.simpleanalyticscdn.com/latest.js")
       end
     end
 
     context "when content-type is text/html, but inject_javascript_to_head is false" do
-      let(:headers) { { "Content-Type" => "text/html" } }
+      let(:headers) { {"Content-Type" => "text/html"} }
       before do
         SimpleAnalyticsRails.configuration.inject_javascript_to_head = false
       end
 
       it do
-        new_status, new_headers, new_response = javascript_injection.call(env)
+        _new_status, _new_headers, new_response = javascript_injection.call(env)
         expect(new_response).to eq(response)
       end
     end
