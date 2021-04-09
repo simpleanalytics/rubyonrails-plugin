@@ -1,17 +1,11 @@
 module SimpleAnalyticsRails
   class Configuration
     def initialize
-      @enabled = true
       @hostname = ""
       @mode = ""
       @ignore_pages = ""
       @skip_dnt = false
       @inject_javascript_to_head = true
-    end
-
-    attr_writer :enabled
-    def enabled?
-      @enabled
     end
 
     attr_accessor :ignore_pages

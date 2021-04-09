@@ -1,13 +1,6 @@
 RSpec.describe SimpleAnalyticsRails::Configuration do
   let(:configuration) { described_class.new }
 
-  describe "#enabled=" do
-    it do
-      expect { configuration.enabled = false }
-        .to change(configuration, :enabled?).from(true).to(false)
-    end
-  end
-
   describe "#inject_javascript_to_head=" do
     it do
       expect { configuration.inject_javascript_to_head = false }

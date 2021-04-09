@@ -2,13 +2,13 @@ RSpec.describe SimpleAnalyticsRails do
   describe "::configure" do
     subject do
       SimpleAnalyticsRails.configure do |configuration|
-        configuration.enabled = false
+        configuration.inject_javascript_to_head = false
       end
     end
 
     it "Allows configuration of gem via block" do
       expect { subject }
-        .to change { SimpleAnalyticsRails.configuration.enabled? }.from(true).to(false)
+        .to change { SimpleAnalyticsRails.configuration.inject_javascript_to_head? }.from(true).to(false)
     end
   end
 
@@ -21,13 +21,13 @@ RSpec.describe SimpleAnalyticsRails do
   describe "::reset_configuration!" do
     before do
       SimpleAnalyticsRails.configure do |configuration|
-        configuration.enabled = false
+        configuration.inject_javascript_to_head = false
       end
     end
 
     it do
       expect { SimpleAnalyticsRails.reset_configuration! }
-        .to change { SimpleAnalyticsRails.configuration.enabled? }.from(false).to(true)
+        .to change { SimpleAnalyticsRails.configuration.inject_javascript_to_head? }.from(false).to(true)
     end
   end
 end
