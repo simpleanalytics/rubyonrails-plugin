@@ -1,4 +1,10 @@
 <p align="center">
+  <a href="https://simpleanalytics.com/?ref=github.com/simpleanalytics/rubyonrails-plugin">
+    <img src="https://assets.simpleanalytics.com/images/logos/logo-github-readme.png" alt="Simple Analytics logo" height="62" />
+  </a>
+</p>
+
+<p align="center">
   <h1 align="center">Simple Analytics Rails</h1>
   <p align="center">
     <img src="https://img.shields.io/gem/v/simple_analytics_rails.svg?color=red" />
