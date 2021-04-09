@@ -11,20 +11,23 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
+        rails:
+          - 'rails60'
+          - 'rails61'
         ruby:
-          - '2.5'
           - '2.6'
           - '2.7'
           - '3.0'
-          - 'ruby-head'
-          - 'jruby-head'
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-          bundler-cache: true
-      - name: Run the test
+      - name: Setup environment
         run: |
-          bundle exec rake spec
+          bundle install --jobs 4 --retry 3
+          bundle exec appraisal ${{ matrix.rails }} bundle install
+      - name: Run the tests
+        run: |
+          bundle exec appraisal ${{ matrix.rails }} rake spec
