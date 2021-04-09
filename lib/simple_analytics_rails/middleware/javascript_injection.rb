@@ -18,14 +18,14 @@ module SimpleAnalyticsRails::Middleware
 
     def inject_javascript_to_response(response)
       if SimpleAnalyticsRails.configuration.inject_javascript_to_head? && response.respond_to?("[]")
-        response[0].gsub!("</head>", "#{javascript_tracker.frontend_script}</head>")
+        response[0].gsub!("</head>", "#{javascript_snippet.frontend_script}</head>")
       end
 
       response
     end
 
-    def javascript_tracker
-      @javascript_tracker ||= SimpleAnalyticsRails::JavascriptTracker.new
+    def javascript_snippet
+      @javascript_snippet ||= SimpleAnalyticsRails::JavascriptSnippet.new
     end
   end
 end

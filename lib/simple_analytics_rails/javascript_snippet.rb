@@ -1,5 +1,5 @@
 module SimpleAnalyticsRails
-  class JavascriptTracker
+  class JavascriptSnippet
     def frontend_script
       [
         sa_event_script,
