@@ -26,11 +26,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-      - name: Setup Appraisal
+          bundle-cache: true
+      - name: Test against rails main
+        if: ${{ matrix.ruby == 'ruby-head' }}
         run: |
-          gem install bundler
-          bundle install
-          bundle exec appraisal install
+         bundle exec appraisal rails-main bundle install
+         bundle exec appraisal rails-main rake test
       - name: Run the tests
         run: |
+          bundle exec appraisal ${{ matrix.rails }} bundle install
           bundle exec appraisal ${{ matrix.rails }} rake spec
