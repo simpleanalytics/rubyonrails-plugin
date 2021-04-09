@@ -22,24 +22,30 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
     end
   end
 
-  describe "#to_html_attributes" do
+  describe "#to_h" do
     context "with default settings" do
       it do
-        expect(configuration.to_html_attributes).to eq("")
+        expect(configuration.to_h).to eq({})
       end
     end
 
-    context "with hostname, ignore_pages & mode set" do
+    context "with options set" do
       before do
         configuration.hostname = "example.com"
+        configuration.mode = "hash"
         configuration.skip_dnt = true
         configuration.ignore_pages = "/vouchers"
       end
 
       it do
-        expect(configuration.to_html_attributes).to include(' data-hostname="example.com" ')
-        expect(configuration.to_html_attributes).to include(' data-skip-dnt="true" ')
-        expect(configuration.to_html_attributes).to include(' data-ignore-pages="/vouchers" ')
+        expect(configuration.to_h).to eq(
+          {
+            data_hostname: "example.com",
+            data_mode: "hash",
+            data_skip_dnt: "true",
+            data_ignore_pages: "/vouchers"
+          }
+        )
       end
     end
   end
