@@ -40,10 +40,10 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
       it do
         expect(configuration.to_h).to eq(
           {
-            data_hostname: "example.com",
-            data_mode: "hash",
-            data_skip_dnt: "true",
-            data_ignore_pages: "/vouchers"
+            hostname: "example.com",
+            mode: "hash",
+            skip_dnt: "true",
+            ignore_pages: "/vouchers"
           }
         )
       end

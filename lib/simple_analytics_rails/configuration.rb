@@ -29,10 +29,10 @@ module SimpleAnalyticsRails
 
     def to_h
       {
-        data_hostname: @hostname,
-        data_mode: @mode,
-        data_skip_dnt: skip_dnt? ? "true" : nil,
-        data_ignore_pages: @ignore_pages
+        hostname: @hostname,
+        mode: @mode,
+        skip_dnt: skip_dnt? ? "true" : nil,
+        ignore_pages: @ignore_pages
       }.compact.reject { |_key, value| value.blank? }
     end
   end
