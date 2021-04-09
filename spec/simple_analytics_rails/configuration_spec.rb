@@ -48,5 +48,18 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
         )
       end
     end
+
+    context "with Turbolinks class being present" do
+      before { class Turbolinks; end }
+      after { Object.send(:remove_const, :Turbolinks) }
+
+      it do
+        expect(configuration.to_h).to eq(
+          {
+            turbolinks_track: "reload"
+          }
+        )
+      end
+    end
   end
 end
