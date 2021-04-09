@@ -1,5 +1,9 @@
-# frozen_string_literal: true
+ENV["RACK_ENV"] = "test"
 
+require "simplecov"
+SimpleCov.start
+
+require "rails"
 require "simple_analytics_rails"
 
 RSpec.configure do |config|

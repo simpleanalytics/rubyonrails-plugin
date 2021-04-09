@@ -5,8 +5,6 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in simple_analytics_rails.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
-
-gem "rspec", "~> 3.0"
-
-gem "standard", "~> 1.0"
+group :test do
+  gem "simplecov", require: false
+end

@@ -13,6 +13,7 @@ module SimpleAnalyticsRails
       @enabled
     end
 
+    attr_accessor :ignore_pages
     attr_accessor :hostname
     attr_accessor :mode
     attr_accessor :skip_dnt

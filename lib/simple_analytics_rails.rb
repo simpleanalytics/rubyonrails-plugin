@@ -20,5 +20,9 @@ module SimpleAnalyticsRails
     def configuration
       @configuration ||= Configuration.new
     end
+
+    def reset_configuration!
+      @configuration = nil
+    end
   end
 end
