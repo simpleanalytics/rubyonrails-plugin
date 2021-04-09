@@ -108,7 +108,7 @@ Please run `bundle exec standardrb --fix` prior to submitting pull requests.
 1. Bump version number at `lib/simple_analytics_rails/version.rb`
 1. Commit and push changes
 1. Publish a new release on GitHub https://github.com/simpleanalytics/rubyonrails-plugin/releases/new
-1. A GitHub Action will then publish the latest version to https://rubygems.org/
+1. A [GitHub Action](https://github.com/simpleanalytics/rubyonrails-plugin/blob/main/.github/workflows/publish.yml) will then publish the latest version to https://rubygems.org/
 
 ## 📝 License
 
