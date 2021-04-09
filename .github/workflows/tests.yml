@@ -19,24 +19,16 @@ jobs:
           - '2.6'
           - '2.7'
           - '3.0'
-          - 'ruby-head'
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-      # We can't use 'bundler-cache' as it gets confused by the multiple gemfiles
-      - uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-${{ matrix.rails }}-${{ matrix.ruby }}-gems-${{ hashFiles('**/*.gemspec') }}
       - name: Setup environment
         run: |
           bundle install --jobs 4 --retry 3
           bundle exec appraisal ${{ matrix.rails }} bundle install
-          bundle info appraisal
-          bundle info rails
       - name: Run the tests
         run: |
           bundle exec appraisal ${{ matrix.rails }} rake spec
