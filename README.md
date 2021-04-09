@@ -2,19 +2,15 @@
   <h1 align="center">Simple Analytics Rails</h1>
   <p align="center">
     <img src="https://img.shields.io/gem/v/simple_analytics_rails.svg?color=red" />
-
     <a href="https://github.com/simpleanalytics/rubyonrails-plugin/blob/main/LICENSE">
       <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-brightgreen.svg" target="_blank" />
     </a>
-
     <a href="https://github.com/testdouble/standard" target="_blank">
       <img alt="Ruby Code Style" src="https://img.shields.io/badge/Ruby_Code_Style-standard-brightgreen.svg" />
     </a>
-
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/standard.yml">
       <img src="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/standard.yml/badge.svg" alt="Standard" style="max-width:100%;">
     </a>
-
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/tests.yml">
       <img src="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/tests.yml/badge.svg" alt="Tests">
     </a>
