@@ -1,8 +1,5 @@
 module SimpleAnalyticsRails
   class JavascriptTracker
-    def initialize
-    end
-
     def frontend_script
       [
         '<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>',

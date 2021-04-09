@@ -18,7 +18,7 @@ module SimpleAnalyticsRails
     end
 
     def configuration
-      @configuration ||= Configuration.new
+      @configuration ||= SimpleAnalyticsRails::Configuration.new
     end
 
     def reset_configuration!
