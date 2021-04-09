@@ -29,13 +29,14 @@ jobs:
       # We can't use 'bundler-cache' as it gets confused by the multiple gemfiles
       - uses: actions/cache@v1
         with:
-          path: ${{ github.workspace }}/vendor/bundle
+          path: vendor/bundle
           key: ${{ runner.os }}-${{ matrix.rails }}-${{ matrix.ruby }}-gems-${{ hashFiles('**/*.gemspec') }}
       - name: Setup environment
         run: |
-          bundle config path ${{ github.workspace }}/vendor/bundle
           bundle install --jobs 4 --retry 3
           bundle exec appraisal ${{ matrix.rails }} bundle install
+          bundle info appraisal
+          bundle info rails
       - name: Run the tests
         run: |
           bundle exec appraisal ${{ matrix.rails }} rake spec
