@@ -30,11 +30,6 @@ jobs:
       - name: Setup environment
         run: |
           bundle install --jobs 4 --retry 3
-      - name: Test against rails main
-        if: ${{ matrix.ruby == 'ruby-head' }}
-        run: |
-         bundle exec appraisal rails-main bundle install
-         bundle exec appraisal rails-main rake spec
       - name: Run the tests
         run: |
           bundle exec appraisal ${{ matrix.rails }} bundle install
