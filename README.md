@@ -22,7 +22,6 @@
     </a>
   </p>
 </p>
-<br />
 
 [Simple Analytics](https://simpleanalytics.com/) is a privacy friendly analytics. No consent required from your visitors!
 
