@@ -5,8 +5,6 @@ require_relative "simple_analytics_rails/middleware/javascript_injection"
 require_relative "simple_analytics_rails/railtie" if defined?(Rails)
 
 module SimpleAnalyticsRails
-  class Error < StandardError; end
-
   class << self
     def configure
       yield(configuration)

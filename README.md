@@ -1,23 +1,32 @@
-# SimpleAnalytics - Rails
+<p align="center">
+  <h1 align="center">Simple Analytics Rails</h1>
+  <p align="center">
+    <img src="https://img.shields.io/gem/v/simple_analytics_rails.svg?color=red" />
 
-## Tasks (some doubles)
+    <a href="https://github.com/simpleanalytics/rubyonrails-plugin/blob/main/LICENSE">
+      <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-brightgreen.svg" target="_blank" />
+    </a>
 
-- It should be configurable, enabling the user to set the settings which are documented https://docs.simpleanalytics.com/overwrite-domain-name
-- It should be available on https://rubygems.org/ - After delivery, I'll run you though how to release new version and such (I'll also documented this in the repo).
-- I'll push my code to https://github.com/simpleanalytics/rubyonrails-plugin
-- I've estimated 1 day of development time at £350. I'll invoice you after delivery.
-- In future version, we'd like to be able to include more of the tracking options. We'll discuss this after the first version is delivered.
-- Have the CDN version of the script embedded
-- Make the domain customizable in the plugin settings (or the most common way to do this in RoR)
-- Follow the RoR conventions
-- Expose the "sa_event" function before the script loads:
-    ```
-    window.sa_event=window.sa_event||function(){a=[].slice.call(arguments);sa_event.q?sa_event.q.push(a):sa_event.q=[a]};
-    ```
-- The script will replace that function when loaded
-- Make sure it works well with Turbolinks (some customers experienced double page views when using Turbolinks; they probably had our script in their body of the page).
+    <a href="https://github.com/testdouble/standard" target="_blank">
+      <img alt="Ruby Code Style" src="https://img.shields.io/badge/Ruby_Code_Style-standard-brightgreen.svg" />
+    </a>
 
-## Installation
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/standard.yml">
+      <img src="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/standard.yml/badge.svg" alt="Standard" style="max-width:100%;">
+    </a>
+
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/tests.yml">
+      <img src="https://github.com/simpleanalytics/rubyonrails-plugin/actions/workflows/tests.yml/badge.svg" alt="Tests">
+    </a>
+  </p>
+</p>
+<br />
+
+[Simple Analytics](https://simpleanalytics.com/) is a privacy friendly analytics. No consent required from your visitors!
+
+This gem adds the [JavaScript Tracking Script](https://docs.simpleanalytics.com/script) to the `<head>` tag of your Ruby on Rails application.
+
+## 🚀 Installation
 
 Add this line to your application's Gemfile:
 
@@ -27,30 +36,95 @@ gem 'simple_analytics_rails'
 
 And then execute:
 
-    $ bundle install
+```bash
+$ bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install simple_analytics_rails
+```bash
+$ gem install simple_analytics_rails
+````
 
-## Usage
+## ✨ Usage
 
-TODO: Write usage instructions here
+After the gem is installed, it will automatically append the Simple Analytics JavaScript snippet before the `</head>` tag on your HTML pages.
 
-## Development
+However you can also configure via an initializer:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+# config/initializers/simple_analytics.rb
+SimpleAnalyticsRails.configure do |configuration|
+  # ==> Overwrite domain name
+  # https://docs.simpleanalytics.com/overwrite-domain-name
+  #
+  # Default is ""
+  configuration.hostname = "example.com"
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+  # ==> Hash mode
+  # https://docs.simpleanalytics.com/hash-mode
+  #
+  # Default is ""
+  configuration.mode = "hash"
 
-## Contributing
+  # ==> Do not track
+  # https://docs.simpleanalytics.com/dnt
+  #
+  # Default is false
+  configuration.skip_dnt = false
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_analytics_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/simple_analytics_rails/blob/master/CODE_OF_CONDUCT.md).
+  # ==> Ignore pages
+  # https://docs.simpleanalytics.com/ignore-pages
+  #
+  # Default is ""
+  configuration.ignore_pages = "/search/*,/account/*,/vouchers"
 
-## License
+  # ==> Inject JavaScript To Head
+  # You can disable the automatic JavaScript injection if you'd like.
+  #
+  # Default is true
+  configuration.inject_javascript_to_head = Rails.env.production?
+end
+```
+
+## 🙏 Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/simpleanalytics/rubyonrails-plugin .
+
+### Code of Conduct
+
+Everyone interacting in the SimpleAnalyticsRails project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/simpleanalytics/rubyonrails-plugin/blob/main/CODE_OF_CONDUCT.md).
+
+### Coding Standards
+
+This project uses [Standard](https://github.com/testdouble/standard) for Ruby code to minimize bike shedding related to source formatting.
+
+Please run `bundle exec standardrb --fix` prior to submitting pull requests.
+
+## 📦 Releasing
+
+1. Bump version number at `lib/simple_analytics_rails/version.rb`
+1. Commit and push changes
+1. Publish a new release on GitHub https://github.com/simpleanalytics/rubyonrails-plugin/releases/new
+1. A GitHub Action will then publish the latest version to https://rubygems.org/
+
+## 📝 License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
+## Tasks (some doubles)
 
-Everyone interacting in the SimpleAnalyticsRails project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simple_analytics_rails/blob/master/CODE_OF_CONDUCT.md).
+- [X] - It should be configurable, enabling the user to set the settings which are documented https://docs.simpleanalytics.com/overwrite-domain-name
+- It should be available on https://rubygems.org/ - After delivery, I'll run you though how to release new version and such (I'll also documented this in the repo).
+- [X] - I'll push my code to https://github.com/simpleanalytics/rubyonrails-plugin
+- I've estimated 1 day of development time at £350. I'll invoice you after delivery.
+- In future version, we'd like to be able to include more of the tracking options. We'll discuss this after the first version is delivered.
+- [X] - Have the CDN version of the script embedded
+- [X] - Make the domain customizable in the plugin settings (or the most common way to do this in RoR)
+- [X] - Follow the RoR conventions
+- [X] Expose the "sa_event" function before the script loads:
+    ```
+    window.sa_event=window.sa_event||function(){a=[].slice.call(arguments);sa_event.q?sa_event.q.push(a):sa_event.q=[a]};
+    ```
+- [X] - The script will replace that function when loaded
+- [] - Make sure it works well with Turbolinks (some customers experienced double page views when using Turbolinks; they probably had our script in their body of the page).

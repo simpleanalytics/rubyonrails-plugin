@@ -6,13 +6,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["Mike Rogers"]
   spec.email = ["me@mikerogers.io"]
 
-  spec.summary = "Add the SimpleAnalytics Javascript Snippet to your rails app"
+  spec.summary = "Add the Simple Analytics JavaScript Snippet to your rails app"
   spec.description = spec.summary
   spec.homepage = "https://simpleanalytics.com/"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/simpleanalytics/rubyonrails-plugin"
@@ -32,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "standardrb", "~> 1.0"
   spec.add_development_dependency "rspec-rails", "~> 4.0"
+  spec.add_development_dependency "yard", "~> 0.9.26"
 end
