@@ -13,15 +13,13 @@ jobs:
       matrix:
         rails:
           - 'rails52'
-          - 'rails6'
+          - 'rails60'
           - 'rails61'
         ruby:
-          - '2.5'
           - '2.6'
           - '2.7'
           - '3.0'
           - 'ruby-head'
-          - 'jruby-head'
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
