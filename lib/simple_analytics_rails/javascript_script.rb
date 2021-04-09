@@ -1,6 +1,6 @@
 module SimpleAnalyticsRails
-  class JavascriptSnippet
-    def frontend_script
+  class JavascriptScript
+    def head_html
       [
         sa_event_script,
         script_tag,

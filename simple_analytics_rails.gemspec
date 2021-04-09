@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Mike Rogers"]
   spec.email = ["me@mikerogers.io"]
 
-  spec.summary = "Add the Simple Analytics JavaScript Snippet to your rails app"
+  spec.summary = "Add the Simple Analytics JavaScript Script to your Rails app"
   spec.description = spec.summary
   spec.homepage = "https://simpleanalytics.com/"
   spec.license = "MIT"
