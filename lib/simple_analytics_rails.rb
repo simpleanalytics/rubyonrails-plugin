@@ -2,13 +2,10 @@ require_relative "simple_analytics_rails/version"
 require_relative "simple_analytics_rails/configuration"
 require_relative "simple_analytics_rails/javascript_tracker"
 require_relative "simple_analytics_rails/middleware/javascript_injection"
-require_relative "simple_analytics_rails/railtie"
+require_relative "simple_analytics_rails/railtie" if defined?(Rails)
 
 module SimpleAnalyticsRails
   class Error < StandardError; end
-
-  # Configuration Object (instance of SimpleAnalyticsRails::Configuration)
-  attr_writer :configuration
 
   class << self
     def configure
