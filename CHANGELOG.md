@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Spotted some wording improvements on the Readme [\#3](https://github.com/simpleanalytics/rubyonrails-plugin/pull/3) ([MikeRogers0](https://github.com/MikeRogers0))
 - Sorting dependencies in gemspec file alphabetically [\#2](https://github.com/simpleanalytics/rubyonrails-plugin/pull/2) ([MikeRogers0](https://github.com/MikeRogers0))
 - Adding Appraisals [\#1](https://github.com/simpleanalytics/rubyonrails-plugin/pull/1) ([MikeRogers0](https://github.com/MikeRogers0))
 
