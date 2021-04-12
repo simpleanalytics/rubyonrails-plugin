@@ -25,7 +25,7 @@
 
 [Simple Analytics](https://simpleanalytics.com/) is a privacy friendly analytics. No consent required from your visitors!
 
-This gem adds the [JavaScript Tracking Script](https://docs.simpleanalytics.com/script) to the `<head>` tag of your Ruby on Rails application.
+This gem adds the [JavaScript Tracking Script](https://docs.simpleanalytics.com/script) to the `<head>` tag of your Ruby on Rails applications.
 
 ## 🚀 Installation
 
@@ -51,7 +51,7 @@ $ gem install simple_analytics_rails
 
 After the gem is installed, it will automatically append the Simple Analytics JavaScript snippet before the `</head>` tag on your HTML pages.
 
-However you can also configure via an initializer:
+However you can also configure it via an initializer:
 
 ```ruby
 # config/initializers/simple_analytics.rb
