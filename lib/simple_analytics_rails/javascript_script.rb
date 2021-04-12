@@ -1,4 +1,5 @@
 module SimpleAnalyticsRails
+  # This outputs the HTML script with the configuration option added to the <script> tag.
   class JavascriptScript
     def head_html
       [

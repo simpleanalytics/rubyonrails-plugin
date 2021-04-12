@@ -1,4 +1,6 @@
 module SimpleAnalyticsRails::Middleware
+  # This receives the request payload and injects the javaascript snippet to the HTML.
+  # It's injected just before the </head> element.
   class JavascriptInjection
     def initialize(app)
       @app = app
