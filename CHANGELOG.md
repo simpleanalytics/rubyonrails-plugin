@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Move \<noscript\> fallback to before \</body\> [\#5](https://github.com/simpleanalytics/rubyonrails-plugin/pull/5) ([MikeRogers0](https://github.com/MikeRogers0))
 - Adding top level documentation for Yard docs [\#4](https://github.com/simpleanalytics/rubyonrails-plugin/pull/4) ([MikeRogers0](https://github.com/MikeRogers0))
 - Spotted some wording improvements on the Readme [\#3](https://github.com/simpleanalytics/rubyonrails-plugin/pull/3) ([MikeRogers0](https://github.com/MikeRogers0))
 - Sorting dependencies in gemspec file alphabetically [\#2](https://github.com/simpleanalytics/rubyonrails-plugin/pull/2) ([MikeRogers0](https://github.com/MikeRogers0))
