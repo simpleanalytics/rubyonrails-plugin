@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Removing TODO list from the Readme [\#6](https://github.com/simpleanalytics/rubyonrails-plugin/pull/6) ([MikeRogers0](https://github.com/MikeRogers0))
 - Move \<noscript\> fallback to before \</body\> [\#5](https://github.com/simpleanalytics/rubyonrails-plugin/pull/5) ([MikeRogers0](https://github.com/MikeRogers0))
 - Adding top level documentation for Yard docs [\#4](https://github.com/simpleanalytics/rubyonrails-plugin/pull/4) ([MikeRogers0](https://github.com/MikeRogers0))
 - Spotted some wording improvements on the Readme [\#3](https://github.com/simpleanalytics/rubyonrails-plugin/pull/3) ([MikeRogers0](https://github.com/MikeRogers0))
