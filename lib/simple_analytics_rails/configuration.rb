@@ -4,16 +4,16 @@ module SimpleAnalyticsRails
       @hostname = ""
       @mode = ""
       @ignore_pages = ""
-      @skip_dnt = false
+      @collect_dnt = false
       @enabled = true
     end
 
     attr_accessor :ignore_pages
     attr_accessor :hostname
     attr_accessor :mode
-    attr_writer :skip_dnt
-    def skip_dnt?
-      @skip_dnt
+    attr_writer :collect_dnt
+    def collect_dnt?
+      @collect_dnt
     end
 
     attr_writer :enabled
@@ -25,7 +25,7 @@ module SimpleAnalyticsRails
       {
         hostname: @hostname,
         mode: @mode,
-        skip_dnt: skip_dnt? ? "true" : nil,
+        collect_dnt: collect_dnt? ? "true" : nil,
         ignore_pages: @ignore_pages,
         turbolinks_track: turbolinks_track
       }.compact.reject { |_key, value| value.blank? }

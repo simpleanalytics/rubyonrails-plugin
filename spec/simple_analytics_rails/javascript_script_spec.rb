@@ -12,12 +12,12 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
         SimpleAnalyticsRails.configure do |configuration|
           configuration.hostname = "example.com"
           configuration.mode = "hash"
-          configuration.skip_dnt = true
+          configuration.collect_dnt = true
         end
       end
 
       it do
-        expect(javascript_script.head_html).to include('<script data-hostname="example.com" data-mode="hash" data-skip-dnt="true" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
+        expect(javascript_script.head_html).to include('<script data-hostname="example.com" data-mode="hash" data-collect-dnt="true" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
       end
     end
   end
