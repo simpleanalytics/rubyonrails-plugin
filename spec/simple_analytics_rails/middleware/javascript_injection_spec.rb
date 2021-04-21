@@ -33,10 +33,10 @@ RSpec.describe SimpleAnalyticsRails::Middleware::JavascriptInjection do
       end
     end
 
-    context "when content-type is text/html, but inject_javascript_to_head is false" do
+    context "when content-type is text/html, but enabled is false" do
       let(:headers) { {"Content-Type" => "text/html"} }
       before do
-        SimpleAnalyticsRails.configuration.inject_javascript_to_head = false
+        SimpleAnalyticsRails.configuration.enabled = false
       end
 
       it do

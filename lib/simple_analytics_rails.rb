@@ -14,7 +14,7 @@ require_relative "simple_analytics_rails/railtie" if defined?(Rails)
 #     configuration.mode = "hash"
 #     configuration.skip_dnt = false
 #     configuration.ignore_pages = "/search/*,/account/*,/vouchers"
-#     configuration.inject_javascript_to_head = Rails.env.production?
+#     configuration.enabled = Rails.env.production?
 #   end
 #
 module SimpleAnalyticsRails

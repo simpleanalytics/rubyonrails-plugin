@@ -84,7 +84,7 @@ SimpleAnalyticsRails.configure do |configuration|
   # You can disable the automatic JavaScript injection if you'd like.
   #
   # Default is true
-  configuration.inject_javascript_to_head = Rails.env.production?
+  configuration.enabled = Rails.env.production?
 end
 ```
 
