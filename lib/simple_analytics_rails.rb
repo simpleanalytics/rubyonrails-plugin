@@ -12,7 +12,7 @@ require_relative "simple_analytics_rails/railtie" if defined?(Rails)
 #   SimpleAnalyticsRails.configure do |configuration|
 #     configuration.hostname = "example.com"
 #     configuration.mode = "hash"
-#     configuration.skip_dnt = false
+#     configuration.collect_dnt = false
 #     configuration.ignore_pages = "/search/*,/account/*,/vouchers"
 #     configuration.enabled = Rails.env.production?
 #   end

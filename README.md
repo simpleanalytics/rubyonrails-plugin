@@ -72,7 +72,7 @@ SimpleAnalyticsRails.configure do |configuration|
   # https://docs.simpleanalytics.com/dnt
   #
   # Default is false
-  configuration.skip_dnt = false
+  configuration.collect_dnt = false
 
   # ==> Ignore pages
   # https://docs.simpleanalytics.com/ignore-pages

@@ -8,10 +8,10 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
     end
   end
 
-  describe "#skip_dnt=" do
+  describe "#collect_dnt=" do
     it do
-      expect { configuration.skip_dnt = true }
-        .to change(configuration, :skip_dnt?).from(false).to(true)
+      expect { configuration.collect_dnt = true }
+        .to change(configuration, :collect_dnt?).from(false).to(true)
     end
   end
 
@@ -26,7 +26,7 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
       before do
         configuration.hostname = "example.com"
         configuration.mode = "hash"
-        configuration.skip_dnt = true
+        configuration.collect_dnt = true
         configuration.ignore_pages = "/vouchers"
       end
 
@@ -35,7 +35,7 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
           {
             hostname: "example.com",
             mode: "hash",
-            skip_dnt: "true",
+            collect_dnt: "true",
             ignore_pages: "/vouchers"
           }
         )
