@@ -4,9 +4,12 @@ module SimpleAnalyticsRails
     def head_html
       [
         sa_event_script,
-        script_tag,
-        '<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>'
+        script_tag
       ].join
+    end
+
+    def body_html
+      '<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>'
     end
 
     private

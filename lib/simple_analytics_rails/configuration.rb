@@ -5,7 +5,7 @@ module SimpleAnalyticsRails
       @mode = ""
       @ignore_pages = ""
       @skip_dnt = false
-      @inject_javascript_to_head = true
+      @enabled = true
     end
 
     attr_accessor :ignore_pages
@@ -16,9 +16,9 @@ module SimpleAnalyticsRails
       @skip_dnt
     end
 
-    attr_writer :inject_javascript_to_head
-    def inject_javascript_to_head?
-      @inject_javascript_to_head
+    attr_writer :enabled
+    def enabled?
+      @enabled
     end
 
     def to_h
