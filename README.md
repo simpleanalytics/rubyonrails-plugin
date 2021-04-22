@@ -7,7 +7,9 @@
 <p align="center">
   <h1 align="center">Simple Analytics Rails</h1>
   <p align="center">
-    <img src="https://img.shields.io/gem/v/simple_analytics_rails.svg?color=red" />
+    <a target="_blank" rel="noopener noreferrer" href="https://rubygems.org/gems/simple_analytics_rails">
+      <img src="https://img.shields.io/gem/v/simple_analytics_rails.svg?color=red" />
+    </a>
     <a href="https://github.com/simpleanalytics/rubyonrails-plugin/blob/main/LICENSE">
       <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-brightgreen.svg" target="_blank" />
     </a>
