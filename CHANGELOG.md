@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Linking to Rubygems.org in Readme [\#9](https://github.com/simpleanalytics/rubyonrails-plugin/pull/9) ([MikeRogers0](https://github.com/MikeRogers0))
 - Changing name of ENV used for RubyGems API key [\#8](https://github.com/simpleanalytics/rubyonrails-plugin/pull/8) ([MikeRogers0](https://github.com/MikeRogers0))
 
 ## [v0.1.0](https://github.com/simpleanalytics/rubyonrails-plugin/tree/v0.1.0) (2021-04-21)
