@@ -15,6 +15,12 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
     end
   end
 
+  describe "#custom_sa_global?" do
+    it do
+      expect { configuration.sa_global = "pa" }.to change(configuration, :custom_sa_global?).from(false).to(true)
+    end
+  end
+
   describe "#to_h" do
     context "with default settings" do
       it do

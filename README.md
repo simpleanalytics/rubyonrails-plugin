@@ -82,6 +82,12 @@ SimpleAnalyticsRails.configure do |configuration|
   # Default is ""
   configuration.ignore_pages = "/search/*,/account/*,/vouchers"
 
+  # ==> Override variable used for JavaScript Events
+  # https://docs.simpleanalytics.com/events#the-variable-sa_event-is-already-used
+  #
+  # Default is "sa_event"
+  configuration.sa_global = "sa_event"
+
   # ==> Inject JavaScript To Head
   # You can disable the automatic JavaScript injection if you'd like.
   #

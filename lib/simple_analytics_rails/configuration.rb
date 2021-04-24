@@ -8,13 +8,17 @@ module SimpleAnalyticsRails
       @enabled = true
       @custom_domain = ""
       @auto_collect = true
-      @sa_global = ""
+      @sa_global = "sa_event"
     end
 
     attr_accessor :ignore_pages
     attr_accessor :hostname
     attr_accessor :mode
     attr_accessor :sa_global
+
+    def custom_sa_global?
+      @sa_global != "sa_event"
+    end
 
     attr_writer :collect_dnt
     def collect_dnt?
@@ -42,6 +46,8 @@ module SimpleAnalyticsRails
 
     def to_h
       {
+        sa_global: custom_sa_global? ? sa_global : nil,
+        auto_collect: auto_collect? ? nil : "false",
         hostname: @hostname,
         mode: @mode,
         collect_dnt: collect_dnt? ? "true" : nil,
