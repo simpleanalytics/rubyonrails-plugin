@@ -88,6 +88,12 @@ SimpleAnalyticsRails.configure do |configuration|
   # Default is "sa_event"
   configuration.sa_global = "sa_event"
 
+  # ==> Trigger custom page views
+  # https://docs.simpleanalytics.com/trigger-custom-page-views#use-custom-collection-anyway
+  #
+  # Default is true
+  configuration.auto_collect = true
+
   # ==> Inject JavaScript To Head
   # You can disable the automatic JavaScript injection if you'd like.
   #

@@ -22,7 +22,7 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
       end
     end
 
-    context "with sa_global configuration set to pa_event" do
+    context "with configuration.sa_global set to pa_event" do
       before do
         SimpleAnalyticsRails.configure do |configuration|
           configuration.sa_global = "pa_event"
@@ -32,6 +32,18 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
       it do
         expect(javascript_script.head_html).to include('window.pa_event=window.pa_event||function()')
         expect(javascript_script.head_html).to include('<script data-sa-global="pa_event" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
+      end
+    end
+
+    context "with configuration.auto_collect set to false" do
+      before do
+        SimpleAnalyticsRails.configure do |configuration|
+          configuration.auto_collect = false
+        end
+      end
+
+      it do
+        expect(javascript_script.head_html).to include('<script data-auto-collect="false" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
       end
     end
   end
