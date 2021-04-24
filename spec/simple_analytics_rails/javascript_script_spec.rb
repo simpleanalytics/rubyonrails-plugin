@@ -17,7 +17,7 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
       end
 
       it do
-        expect(javascript_script.head_html).to include('window.sa_event=window.sa_event||function()')
+        expect(javascript_script.head_html).to include("window.sa_event=window.sa_event||function()")
         expect(javascript_script.head_html).to include('<script data-hostname="example.com" data-mode="hash" data-collect-dnt="true" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
       end
     end
@@ -30,7 +30,7 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
       end
 
       it do
-        expect(javascript_script.head_html).to include('window.pa_event=window.pa_event||function()')
+        expect(javascript_script.head_html).to include("window.pa_event=window.pa_event||function()")
         expect(javascript_script.head_html).to include('<script data-sa-global="pa_event" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
       end
     end
