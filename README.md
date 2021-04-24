@@ -94,6 +94,12 @@ SimpleAnalyticsRails.configure do |configuration|
   # Default is true
   configuration.auto_collect = true
 
+  # ==> Custom Domain
+  # https://docs.simpleanalytics.com/bypass-ad-blockers
+  #
+  # Default is ""
+  configuration.custom_domain = "custom.domain.com"
+
   # ==> Inject JavaScript To Head
   # You can disable the automatic JavaScript injection if you'd like.
   #

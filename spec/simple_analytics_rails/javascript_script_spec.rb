@@ -46,11 +46,35 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
         expect(javascript_script.head_html).to include('<script data-auto-collect="false" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
       end
     end
+
+    context "with configuration.custom_domain set to custom.domain.com" do
+      before do
+        SimpleAnalyticsRails.configure do |configuration|
+          configuration.custom_domain = "custom.domain.com"
+        end
+      end
+
+      it do
+        expect(javascript_script.head_html).to include('<script async defer src="https://custom.domain.com/latest.js"></script>')
+      end
+    end
   end
 
   describe "#body_html" do
     it do
       expect(javascript_script.body_html).to eq('<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>')
+    end
+
+    context "with configuration.custom_domain set to custom.domain.com" do
+      before do
+        SimpleAnalyticsRails.configure do |configuration|
+          configuration.custom_domain = "custom.domain.com"
+        end
+      end
+
+      it do
+        expect(javascript_script.body_html).to include('<img src="https://custom.domain.com/noscript.gif"')
+      end
     end
   end
 end

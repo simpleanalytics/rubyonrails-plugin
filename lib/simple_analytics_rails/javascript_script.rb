@@ -9,7 +9,7 @@ module SimpleAnalyticsRails
     end
 
     def body_html
-      '<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>'
+      '<noscript><img src="https://' + configuration.noscript_domain + '/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>'
     end
 
     private
@@ -26,7 +26,7 @@ module SimpleAnalyticsRails
       [
         "<script",
         configuration_to_html_attributes,
-        'async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>'
+        'async defer src="https://' + configuration.script_domain + '/latest.js"></script>'
       ].compact
         .reject(&:blank?)
         .join(" ")
