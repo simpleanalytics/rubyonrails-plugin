@@ -35,6 +35,18 @@ RSpec.describe SimpleAnalyticsRails::JavascriptScript do
       end
     end
 
+    context "with configuration.onload_callback set to onloadCallback()" do
+      before do
+        SimpleAnalyticsRails.configure do |configuration|
+          configuration.onload_callback = "onloadCallback()"
+        end
+      end
+
+      it do
+        expect(javascript_script.head_html).to include('<script onload="onloadCallback()" async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>')
+      end
+    end
+
     context "with configuration.auto_collect set to false" do
       before do
         SimpleAnalyticsRails.configure do |configuration|

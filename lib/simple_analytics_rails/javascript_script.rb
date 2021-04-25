@@ -26,10 +26,17 @@ module SimpleAnalyticsRails
       [
         "<script",
         configuration_to_html_attributes,
+        onload_callback,
         'async defer src="https://' + configuration.script_domain + '/latest.js"></script>'
       ].compact
         .reject(&:blank?)
         .join(" ")
+    end
+
+    def onload_callback
+      if configuration.onload_callback?
+        "onload=\"#{configuration.onload_callback}\""
+      end
     end
 
     def configuration_to_html_attributes

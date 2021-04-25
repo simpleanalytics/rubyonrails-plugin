@@ -9,6 +9,7 @@ module SimpleAnalyticsRails
       @custom_domain = ""
       @auto_collect = true
       @sa_global = "sa_event"
+      @onload_callback = ""
     end
 
     attr_accessor :ignore_pages
@@ -42,6 +43,11 @@ module SimpleAnalyticsRails
     attr_writer :auto_collect
     def auto_collect?
       @auto_collect
+    end
+
+    attr_accessor :onload_callback
+    def onload_callback?
+      @onload_callback.present?
     end
 
     def to_h

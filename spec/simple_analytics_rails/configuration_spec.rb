@@ -21,6 +21,12 @@ RSpec.describe SimpleAnalyticsRails::Configuration do
     end
   end
 
+  describe "#onload_callback?" do
+    it do
+      expect { configuration.onload_callback = "onloadCallback()" }.to change(configuration, :onload_callback?).from(false).to(true)
+    end
+  end
+
   describe "#to_h" do
     context "with default settings" do
       it do

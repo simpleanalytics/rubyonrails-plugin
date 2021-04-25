@@ -94,6 +94,12 @@ SimpleAnalyticsRails.configure do |configuration|
   # Default is true
   configuration.auto_collect = true
 
+  # ==> Onload Callback
+  # https://docs.simpleanalytics.com/trigger-custom-page-views#use-custom-collection-anyway
+  #
+  # Default is ""
+  configuration.onload_callback = "onloadCallback()"
+
   # ==> Custom Domain
   # https://docs.simpleanalytics.com/bypass-ad-blockers
   #
