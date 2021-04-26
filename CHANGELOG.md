@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/simpleanalytics/rubyonrails-plugin/tree/HEAD)
+## [v0.2.0](https://github.com/simpleanalytics/rubyonrails-plugin/tree/v0.2.0) (2021-04-26)
 
-[Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.1.0...HEAD)
+[Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.1.0...v0.2.0)
 
 **Implemented enhancements:**
 
