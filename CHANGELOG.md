@@ -4,8 +4,13 @@
 
 [Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.1.0...HEAD)
 
+**Implemented enhancements:**
+
+- Add more settings [\#10](https://github.com/simpleanalytics/rubyonrails-plugin/issues/10)
+
 **Merged pull requests:**
 
+- Adding new settings missed in 0.1.0 [\#11](https://github.com/simpleanalytics/rubyonrails-plugin/pull/11) ([MikeRogers0](https://github.com/MikeRogers0))
 - Linking to Rubygems.org in Readme [\#9](https://github.com/simpleanalytics/rubyonrails-plugin/pull/9) ([MikeRogers0](https://github.com/MikeRogers0))
 - Changing name of ENV used for RubyGems API key [\#8](https://github.com/simpleanalytics/rubyonrails-plugin/pull/8) ([MikeRogers0](https://github.com/MikeRogers0))
 
