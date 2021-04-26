@@ -14,6 +14,10 @@ require_relative "simple_analytics_rails/railtie" if defined?(Rails)
 #     configuration.mode = "hash"
 #     configuration.collect_dnt = false
 #     configuration.ignore_pages = "/search/*,/account/*,/vouchers"
+#     configuration.sa_global = "sa_event"
+#     configuration.auto_collect = true
+#     configuration.onload_callback = "onloadCallback()"
+#     configuration.custom_domain = "custom.domain.com"
 #     configuration.enabled = Rails.env.production?
 #   end
 #

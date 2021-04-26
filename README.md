@@ -27,7 +27,7 @@
 
 [Simple Analytics](https://simpleanalytics.com/) is a privacy friendly analytics. No consent required from your visitors!
 
-This gem adds the [JavaScript Tracking Script](https://docs.simpleanalytics.com/script) to the `<head>` tag of your Ruby on Rails applications.
+This gem adds the [JavaScript Tracking Script](https://docs.simpleanalytics.com/script) to the `<head>` & `<body>` tag of your Ruby on Rails applications.
 
 ## 🚀 Installation
 
@@ -81,6 +81,30 @@ SimpleAnalyticsRails.configure do |configuration|
   #
   # Default is ""
   configuration.ignore_pages = "/search/*,/account/*,/vouchers"
+
+  # ==> Override variable used for JavaScript Events
+  # https://docs.simpleanalytics.com/events#the-variable-sa_event-is-already-used
+  #
+  # Default is "sa_event"
+  configuration.sa_global = "sa_event"
+
+  # ==> Trigger custom page views
+  # https://docs.simpleanalytics.com/trigger-custom-page-views#use-custom-collection-anyway
+  #
+  # Default is true
+  configuration.auto_collect = true
+
+  # ==> Onload Callback
+  # https://docs.simpleanalytics.com/trigger-custom-page-views#use-custom-collection-anyway
+  #
+  # Default is ""
+  configuration.onload_callback = "onloadCallback()"
+
+  # ==> Custom Domain
+  # https://docs.simpleanalytics.com/bypass-ad-blockers
+  #
+  # Default is ""
+  configuration.custom_domain = "custom.domain.com"
 
   # ==> Inject JavaScript To Head
   # You can disable the automatic JavaScript injection if you'd like.
