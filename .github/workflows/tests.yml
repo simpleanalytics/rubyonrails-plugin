@@ -8,26 +8,31 @@ on:
 jobs:
   tests:
     name: RSpec
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         rails:
           - 'rails60'
           - 'rails61'
+          - 'rails-main'
         ruby:
           - '2.6'
           - '2.7'
           - '3.0'
+          - 'head'
     steps:
       - uses: actions/checkout@v2
+      
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+          
       - name: Setup environment
         run: |
           bundle install --jobs 4 --retry 3
           bundle exec appraisal ${{ matrix.rails }} bundle install
+          
       - name: Run the tests
         run: |
           bundle exec appraisal ${{ matrix.rails }} rake spec
