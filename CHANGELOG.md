@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/simpleanalytics/rubyonrails-plugin/tree/HEAD)
 
-[Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.2.0...HEAD)
+[Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.3.0...HEAD)
+
+**Closed issues:**
+
+- NoMethodError: undefined method `gsub!' for nil:NilClass [\#13](https://github.com/simpleanalytics/rubyonrails-plugin/issues/13)
+
+**Merged pull requests:**
+
+- fix: use the safe navigation for nil responses. [\#15](https://github.com/simpleanalytics/rubyonrails-plugin/pull/15) ([ParamagicDev](https://github.com/ParamagicDev))
+
+## [v0.3.0](https://github.com/simpleanalytics/rubyonrails-plugin/tree/v0.3.0) (2021-07-09)
+
+[Full Changelog](https://github.com/simpleanalytics/rubyonrails-plugin/compare/v0.2.0...v0.3.0)
 
 **Merged pull requests:**
 
