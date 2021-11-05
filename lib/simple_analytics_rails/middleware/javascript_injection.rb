@@ -20,8 +20,8 @@ module SimpleAnalyticsRails::Middleware
 
     def inject_javascript_to_response(response)
       if SimpleAnalyticsRails.configuration.enabled? && response.respond_to?("[]")
-        response[0].gsub!("</head>", "#{javascript_script.head_html}</head>")
-        response[0].gsub!("</body>", "#{javascript_script.body_html}</body>")
+        response[0]&.gsub!("</head>", "#{javascript_script.head_html}</head>")
+        response[0]&.gsub!("</body>", "#{javascript_script.body_html}</body>")
       end
 
       response
